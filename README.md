@@ -5,4 +5,4 @@ The Text-Adventure is only in French, one day, i will update this, to make a bet
 
 So Forgive me, for the bad tales that i wrote...
 
-![Alt Text](https://giphy.com/gifs/bilbo-baggins-the-hobbit-5niPC8hps5s7C)
+![Alt Text](http://www.reddit.com/r/reactiongifs/comments/1n9cfg/when_someone_calls_me_a_cunt_on_reddit/)
