@@ -4,3 +4,5 @@ This is a simple Text-Adventure, code in Python language. I'm not a scenarist so
 The Text-Adventure is only in French, one day, i will update this, to make a better story & to add more functionnalities.
 
 So Forgive me, for the bad tales that i wrote...
+
+![Alt Text](https://giphy.com/gifs/bilbo-baggins-the-hobbit-5niPC8hps5s7C)
