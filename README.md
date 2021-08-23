@@ -5,6 +5,4 @@ The Text-Adventure is only in French, one day, i will update this, to make a bet
 
 
                                                                                                                
-![Alt Text](https://i1.wp.com/media1.giphy.com/media/5niPC8hps5s7C/giphy.gif)           
-
-                                                                                                So Forgive me, for the bad tales that i wrote...
+![Alt Text](https://i1.wp.com/media1.giphy.com/media/5niPC8hps5s7C/giphy.gif)           ---- > So Forgive me, for the bad tales that i wrote...
