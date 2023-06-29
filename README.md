@@ -1,4 +1,5 @@
 # Python Text-Adventure
+![](14f5c6b8e49831600e8646222bb0ed2d.jpg)
 
 ## Description
 
