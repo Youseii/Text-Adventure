@@ -1,8 +1,13 @@
-# Text-Adventure
-This is a simple Text-Adventure, code in Python. I'm not a scenarist so it was just a ***Fun Project***, that i make during my holidays.
+# Python Text-Adventure
 
-The Text-Adventure is only in French, one day, i will update this, to make a better story & to add more functionnalities.
+## Description
 
- ----> So Forgive me, for the bad tale that i wrote and enjoy the little and strange adventure !
-                                                                           
-![Alt Text](https://i1.wp.com/media1.giphy.com/media/5niPC8hps5s7C/giphy.gif)          
+Since my sweet childhood, I've always wanted to write my own story but I was knowing my lack of skills in story telling due to my young age.
+And now, I tried to make my own story, and so I can for sure say that it was not my young age the issue.
+So here an strange and not good story with choice made in Python, it is just another fun idea how appear in my mind.
+Even George Lucas would be jealous of my talent
+
+This Text-Adventure is in French only, sorry for all the non-french friends, I will update it one day :)
+
+## Installation
+- Just run the python program, 
