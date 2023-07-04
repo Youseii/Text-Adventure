@@ -1,281 +1,97 @@
 """
 Text-Adventure in python ( FR version )
+Intro - Game Over - Premiere et les salles bis
 """
 import time
-from random import randrange
+import part2
 
+# Classe principal
+class TextAdventure:
+    def __init__(self):
+        self.speech_narrator = str
+        self.speech_sign = str
 
-# Fonction pour les game over pris par le joueur
-def game_over(raison):
-
-    print("\n", raison)
-    print(" GAME OVER :)")
-
-
-def seventh_room():
-    print("Vous etes arrivé à la septième salle, cependant quelqu'un qui ne semble plus humain se dresse devant vous.\n",
-          "Souhaitez-vous rencontré cet etre ?\n",
-          "1) Oui\n",
-          "2) Non\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        print("Cet etre vous ordonne de lui donnez son nom...\n")
-        reply = input("> ").lower()
-        name = ["Dédale", "dédale"]
-
-        if reply in name:
-            print("Vous avez vu juste, cet etre est Dédale, celui qui posez les panneaux pour vous.\n",
-                  "Il ne semble plus humain, mais vous distinguez un sourire et quelque paroles :\n",
-                  "Amigo... Merci...\n")
-            time.sleep(5)
-            game_over("Cependant, vous mourrez de sa main, l'explication, il prefere vous liberez de ce labyrinthe par lui meme, car il n'existe aucun échappatoire\n")
-        elif reply not in name:
-            game_over("Vous n'avez pas trouvé le nom de cet etre, il n'hésite pas à vous coupez la tete\n Cependant avant de completement mourir vous distinguez quelques mots : Faux...Amigo...")
-    elif reponse == 2:
-        game_over("L'etre n'hésite pas à vous décapitez, la raison est qu'il désire vous liberez de cet enfer mal scénarisé...\n")
-    else:
-        game_over("Tu ne sais pas lire les consignes ?")
-
-
-def sixth_room():
-    print("Vous etes arrivé à la sixième salle, qui diffère totalement des salles précédentes.\n",
-          "Une vaste plaine, avec des ruines d'une ancienne cité...\n",
-          "Un panneau se trouve devant vous.\n",
-          "Souhaitez-vous lire le panneau ?\n",
-          "1) Oui\n",
-          "2) Non\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        print("          Hey Amigo !\n",
-              "Félicitations d'être arrivé jusque ici, cela devait etre compliqué de trouvé la bonne combinaison.\n",
-              "Tu te questionnes peut-être  sur cette salle, et bien sache que c'était mon royaume...\n",
-              "Tu dois sûrement  ne rien comprendre haha, c'est normal, lorsque je suis arrivé pour la premiere fois,\n",
-              "il n'y avait qu'un village de paysans, puis au fil du temps, on a évolué, jusqu'à devenir une nation.\n",
-              "Alors comment ça a pu finir comme ça, en ruine... Des problèmes politiques, que je n'ai pas su m'occuper...\n",
-              "Je n'ai pas su bien gérer mon royaume et mon peuple...\n",
-              "Amigo cela va être  mon dernier panneau, je ne sais pas si quelqu'un verra les panneaux, mais toutefois\n",
-              "s'il y a bien quelqu'un qui les lit, je te souhaite de survivre à tout ça, j'aimerais qu'on se rappel de moi,\n",
-              "Amigo peut être aurions-nous la chance de nous rencontré un jour, d'ailleur je m'appel Dédale, souviens t'en haha.\n",
-              "Amigo Bonne Chance et ne tombe pas dans les préjudices du labyrinthe\n",
-              "PS: J'ai appris que nous n'étions pas les premiers à être arrivé dans le labyrinthe, et qu'ils finissent tous disparu ou mort.\n")
-        time.sleep(25)
-        print("Au bout des ruines se trouve la porte vers la nouvelle salle...\n")
-        time.sleep(2)
-        seventh_room()
-    elif reponse == 2:
-        print("Un etre qui ne semble pas humain se dresse devant vous, et vous ordonne de lui donnez son nom...\n")
-        reply = input("> ").lower()
-        name = ["Dédale", "dédale"]
-
-        if reply in name:
-            print("Vous avez vu juste, cet etre est Dédale, celui qui posez les panneaux pour vous.n",
-                  "Il ne semble plus humain, mais vous distinguez un sourire et quelque paroles avant qu'il disparaisse :\n",
-                  "Amigo... Merci...\n")
-            time.sleep(5)
-            game_over("Vous mourrez d'une cause mystérieuse, peut-etre, est-ce le destin de ceux qui évite les pancartes...")
-
-        elif reply not in name:
-            game_over("Vous n'avez pas trouvé le nom de cet etre, il n'hésite pas à vous coupez la tete\n Cependant avant de completement mourir vous distinguez quelques mots : Faux...Amigo...")
-    else:
-        game_over("Tu ne sais pas lire les consignes ?")
-
-
-def choose_room():
-    print("3 portes se trouve devant vous, quel porte choisissez-vous ?\n",
-          "1) Porte de Gauche\n",
-          "2) Porte du Millieu\n",
-          "3) Porte de Droite\n")
-    ran_numb = randrange(1, 4)
-    print(ran_numb)
-    reponse = int(input("> "))
-
-    def choose_room2():
-        print("5 portes se trouve devant vous, quel porte choisissez-vous ?\n",
-              "1) Porte extrémité gauche\n",
-              "2) Porte de gauche\n"
-              " 3) Porte du milieu\n",
-              "4) Porte de droite\n",
-              "5) Porte extrémité droite\n")
-        ran_numb2 = randrange(1, 6)  # Choisi un nombre entre 1 à 5 (Portes choisi au hasard donc)
-        print(ran_numb2)
-        answer = int(input("> "))
-
-        def choose_room3():
-            print("5 portes se trouve devant vous, quel porte choisissez-vous ?\n",
-                  "1) Porte extrémité gauche\n",
-                  "2) Porte de gauche\n"
-                  " 3) Porte du millieu\n",
-                  "4) Porte de droite\n",)
-            ran_numb3 = randrange(1, 5)
-            print(ran_numb3)
-            which_room = int(input("> "))
-
-        # Boucle POUR LA FONCTION choose_room3() c'est du random
-            if which_room == ran_numb3:
-                print("Vous sentez une présence, vous épiez, mais vous n'y prêtez pas vraiment d'attention...\n")
-                time.sleep(1)
-                sixth_room()
-            elif which_room != ran_numb3:
-                choose_room()
-            else:
-                game_over("Tu ne sais pas lire les consignes ?")
-
-    # BOUCLE POUR LA FONCTION choose_room2() c'est du random
-        if answer == ran_numb2:
-            choose_room3()
-        elif answer != ran_numb2:
-            choose_room()
+    # Methode de Game Over
+    def gameover(self, raison):
+        print("Game Over :", raison)
+        
+    # Methode pour le début de partie ( introduction )
+    def beginning(self):
+        self.speech_narrator = "--------------- NARRATEUR ---------------\n" \
+                           "Vous vous réveillez à l'intérieur d'une salle, devant vous un panneau et une porte, choisissez-vous lire le panneau ?\n" \
+                           "\tChoix 1 -- Lire le pancarte\n" \
+                           "\tChoix 2 -- Franchir la porte\n" \
+                           "---------------"
+        print(self.speech_narrator)
+        # Reponse du joueur
+        reponse = int(input("Votre choix : "))
+        
+        if reponse == 1:
+            # Lecture de la pancarte
+            self.speech_sign = "\n--------------- PANCARTE ---------------\n" \
+                               "Salut Amigo, tu te demandes peut-être où tu te trouves actuellement... Sache que moi-meme je n'en ai aucune idée hahaha !!\n" \
+                               "J'espère ne pas t'avoir vexé ! Me concernant, je suis juste une personne transporté ici, je laisse des pancartes pour les « échoués » comme toi.\n" \
+                               "Si je ne meurs pas d'entité inconnue, tu auras des nouvelles de moi et de mes découvertes via les pancartes donc lis les !\n" \
+                               "Amigo, à très vite !\n" \
+                               "---------------"
+            print(self.speech_sign)
+            time.sleep(15)
+            print("Après la lecture de la pancarte, vous décidez de franchir la porte...")
+            self.first_room()
+        
+        elif reponse == 2:
+            # Choix franchir la porte
+            self.speech_narrator = "\n--------------- NARRATEUR ---------------\n" \
+                            "Vous ignorez la pancarte et décidez d'ouvrir la porte devant vous pour ainsi passer à la salle suivante...\n" \
+                            "---------------"
+            print(self.speech_narrator)
+            self.first_room()
         else:
-            game_over("Tu ne sais pas lire les consignes ?")
+            self.gameover("Respecte les règles sinon j'viens m'occuper de ton cas, c'est 1 ou 2 PAS AUTRE CHOSE")
+    
+    # Premiere salle
+    def first_room(self):
+        # Attente de 3s pour ne pas envoyer trop de texte d'un coup
+        time.sleep(3)
+        self.speech_narrator = "\n--------------- NARRATEUR ---------------\n" \
+                    "Alors que vous entrez dans la salle, une atmosphère pesante vous enveloppe, laissant une sensation de frissonnement sur votre peau.\n" \
+                    "Vous vous retrouvez face à deux portes mystérieuses, chacune renfermant peut-être des secrets inexplorés.\n" \
+                    "Une se trouve juste en face de vous, tandis que l'autre se dresse à votre gauche, dissimulant peut-être des réponses à vos questions.\n" \
+                    "Choisissez avec précaution, car votre destin repose sur le seuil de l'une de ces portes lugubres.\n" \
+                    "\tChoix 1 -- Porte de Gauche\n" \
+                    "\tChoix 2 -- Porte en face de vous\n" \
+                    "---------------"
+        print(self.speech_narrator)
+        
+        # Reponse du joueur
+        reponse = int(input("Votre choix : "))
 
-#  BOUCLE POUR LA FONCTION choose_room() c'est du random
-    if reponse == ran_numb:
-        choose_room2()
-    elif reponse != ran_numb:
-        choose_room()
-    else:
-        game_over("Tu ne sais pas lire les consignes ?")
-
-
-def fourth_room():
-    print("Vous etes arrivé dans la quatrième salle, 5 portes se présente devant vous\n",
-          "Cependant, il y a une pancarte en face des portes\n",
-          "Voulez-vous la lire ?\n",
-          "1) Lire le panneau\n",
-          "2) Ne pas lire le panneau\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        print("Hey Amigo, ta réussi l'énigme, bien joué !\n",
-              "Bon tu vois surement les 5 portes devant toi, eh bien cela fait un bon moment que je suis dessus.\n",
-              "Le mystère est qu'ont doit trouvé la bonne combinaison, juste derriere ces portes ce trouve encore d'autres portes.\n",
-              "J'espere que tu es née sous une bonne étoile, sinon tu peux y rester bloquer toute ta vie hahaha\n",
-              "Je te souhaite bonne chance Amigo !\n",
-              "PS : tu recommence l'étape à chaque fois que tu te foire de porte, j'ai remarqué que les portes\n",
-              "             sont choisi au hasard à chaque choix, j'espère que tu me comprend hahaha\n")
-        time.sleep(20)
-        choose_room()
-
-    elif reponse == 2:
-        choose_room()
-
-    else:
-        game_over("Tu ne sais pas lire les consignes ?")
-
-
-def enigme():
-    print("Qu'est-ce que la vie ?\n",
-          "C'est avant tout une histoire qui est raconté,'Ma vie est une énigme dont ton nom est le mot...'\n",
-          "'La vie est une phrase interrompue...'", "Qui suis-je ?\n")
-
-    reponse = input("> ").lower()
-    ecrivain = ["victor hugo", "Victor Hugo", "victor Hugo", "Victor hugo"]
-
-    if reponse in ecrivain:
-        print("Bonne réponse, continuez votre chemin vers la nouvelle salle.")
-        fourth_room()
-    else:
-        game_over("Mauvaise réponse, le labyrinthe a fait son choix.\n Meurs...")
+        # Porte de Gauche ( bis_room -- secrete )
+        if reponse == 1:
+            print("Vous entrez dans la porte de gauche...\n")
+            self.bis_room()
+        elif reponse == 2:
+            # deuxieme salle provenant de l'autre fichier python pour pas mettre trop de ligne ici
+            print("Vous entrez dans une nouvelle salle...\n")
+            test = part2.Adventure()
+            time.sleep(2)
+            test.second_room()
+        else:
+            self.gameover("Les ténèbres du non-respect des règles vous engloutisse, 1 ou 2. Pourquoi autre chose...")
+    
+    def bis_room(self):
+        time.sleep(2)
+        self.speech_narrator = "--------------- NARRATEUR ---------------\n" \
+                    "Lorsque vous franchissez le seuil de la salle, une aura inquiétante s'abat sur vous, glaçant votre sang et éveillant vos instincts de survie\n" \
+                    "\tLes murs décrépis se dressent devant vous, recouverts de messages énigmatiques tracés dans une encre noire et dégoulinante.\n" \
+                    "\tLeurs mots s'entremêlent dans un langage sinistre, semblant murmurer des présages funestes, vous distinguez une chaîne de mot compréhensible\n" \
+                    "..Labyri..nt..he... Pie..ge.....\n" \
+                    "---------------"
+        print(self.speech_narrator)
+        time.sleep(11)
+        self.gameover("\nL'apparition d'un être sinistre et mystérieux scelle votre destin, interdisant toute révélation des sombres secrets qui hantent cet endroit maudit.")
 
 
-def third_room():
-    print("Vous êtes dans la troisième salle, et un panneau se situe devant vous.",
-          "Voulez-vous le lire ?\n",
-          "1) Lire le panneau\n",
-          "2) Ne pas le lire\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        print("     Salut Amigo !",
-              "Si tu lis ça, c'est que tu es en vie haha, tu as du faire face aux gobelins de la salle précédente\n",
-              "j'ai fuis, aucune chance d'affronté des monstres sans armes n'est-ce pas ?\n",
-              "Amigo, les ennuies commence, cet salle est spécial, enfaite pour passer à l'autre salle, il faut résoudre une énigme\n",
-              "perso je n'ai jamais été très bon, mais j'abandonne pas haha\n",
-              "Le seul indice que j'ai à te donné est qu'il était un grand écrivain !\n",
-              "On se retrouve à la prochaine pancarte, si je suis en vie ! haha\n")
-        time.sleep(20)
-        enigme()
-
-    elif reponse == 2:
-        enigme()
-    else:
-        game_over("Tu ne sais pas lire les consignes ???")
-
-
-def second_room():
-    print("Vous êtes dans la seconde salle avec à l'intérieur un coffre gardé par 3 gobelins\n",
-          "La porte pour la troisième salle se trouve à quelques pas du groupe de gobelins\n",
-          "Voulez-vous :\n",
-          "1) Combattre ces gobelins\n",
-          "2) Fuir vers la porte\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        game_over("Les gobelins sont 3 et armé, vous finissez encerclé, et abattue par les gobelins.\n")
-
-    elif reponse == 2:
-        print("Passage à la troisième salle, en laissant les gobelins et le coffre derrière...\n")
-        third_room()
-    else:
-        game_over("Tu ne sais pas lire les consignes ??")
-
-
-def first_room():
-    print("Vous arrivez dans la première salle du labyrinthe, 2 portes se trouvent devant vous...\n",
-          "Une inscription est écrite au-dessus de chaque porte : \n",
-          "1) Porte de Droite : Continuer\n",
-          "2) Porte de Gauche : Liberté\n"
-          "             Quelle porte choisissez-vous, 1 ou 2 ?\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        print("Vous entrez dans la seconde salle,cependant, juste avant la fermeture complete de la porte",
-              "vous entendez un bruit strident...\n")
-        time.sleep(5)
-        second_room()
-
-    elif reponse == 2:
-        print("Vous ouvrez la porte avec espoir de sortir de ce labyrinthe.",
-              "Cependant, vous n'y trouvez pas la liberté espérer...",
-              "Seul un panneau au milieu de la salle, avec écrit :\n",
-              "             Bienvenue...")
-        time.sleep(5)
-        game_over("Mort inconnu, aucune trace...")
-
-    else:
-        game_over("Tu ne sais pas lire les consignes ??")
-
-
-def early_game():
-    # Introduction
-    print("Vous vous réveillez à l'intérieur d'une salle, devant un panneau, choisissez vous de lire le panneau ( 1 ou 2 )?\n",
-          "1) Lire le panneau\n",
-          "2) Ne pas le lire\n")
-    reponse = int(input("> "))
-
-    if reponse == 1:
-        # Lecture de la pancarte + passage dans l'autre salle
-        print("         Salut Amigo\n\n", "Tu te demandes peut-être où tu te trouves actuellement, eh bien moi-même, je ne sais pas haha !\n",
-              "Ne sois pas vexé, tout ce que je sais, c'est que nous sommes dans un labyrinthe.\n",
-              "Je n'ai moi-meme pas beaucoup d'information actuellement.\n",
-              "J'essayerais de te parler de mon aventure à travers les pancartes que je laisserais sur mon passage.\n\n",
-              "Amigo, à toi de survivre, pour me raconter ton aventure !\n\n",
-              "PS : il y a sûrement des monstres dans ce labyrinthe, Bonne chance !\n\n")
-
-        # Passage dans l'autre salle après 20 secondes ( pour laisser le temps de lire )
-        time.sleep(19)
-        first_room()
-
-    elif reponse == 2:
-        # Passage direct à l'autre salle
-        print("Vous passez à la salle suivante grace à la porte situé devant vous.")
-        first_room()
-
-    else:
-        # Game Over car le joueur n'a pas suivi les instructions
-        game_over("Tu ne sais pas lire les consignes ?")
-
-
-early_game()
+if __name__ == "__main__":
+    obj = TextAdventure()
+    obj.beginning()
